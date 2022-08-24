@@ -6,17 +6,16 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.myapplication.Fragment.*
-import com.example.myapplication.databinding.ActivityRisingCampW3InstaBinding
+import com.example.myapplication.databinding.ActivityInstagramBinding
 
-class RisingCampW3_insta : AppCompatActivity() {
-    private lateinit var binding: ActivityRisingCampW3InstaBinding
+class InstagramActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityInstagramBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRisingCampW3InstaBinding.inflate(layoutInflater)
+        binding = ActivityInstagramBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
 
         supportFragmentManager.beginTransaction().add(binding.flInsta.id, HomeFragment()).commit()
         binding.btnNav.setOnNavigationItemSelectedListener {
@@ -34,10 +33,7 @@ class RisingCampW3_insta : AppCompatActivity() {
         }
     }
 
-
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(binding.flInsta.id, fragment).commit()
     }
-
-
 }

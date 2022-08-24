@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,14 +13,14 @@ class RecyclerViewAdapterInstaMainFeed : RecyclerView.Adapter<RecyclerViewAdapte
     inner class Holder(val binding: InstaMainfeedBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MainFeedItemModel, position: Int) {
-            binding.mainId.text = item.nickName
-            binding.mainFeed.setImageResource(item.itemImage)
+//            binding.mainId.text = item.nickName
+//            binding.mainFeed.setImageResource(item.itemImage)
 
         }
     }
 
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerViewAdapterInstaMainFeed.Holder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): Holder {
         return Holder(
             InstaMainfeedBinding.inflate(
                 LayoutInflater.from(viewGroup.context),
@@ -30,7 +30,7 @@ class RecyclerViewAdapterInstaMainFeed : RecyclerView.Adapter<RecyclerViewAdapte
         )
     }
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapterInstaMainFeed.Holder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(list[position], position)
     }
 
