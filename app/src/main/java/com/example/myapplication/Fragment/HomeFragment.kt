@@ -50,14 +50,14 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
         for (i in 0..10) {
             feedData.add(
                 MainFeedItemModel(
-                    R.drawable.yadoran,
-                    "kkk",
+                    R.drawable.hoe_bbang,
+                    "2blux",
                     false,
-                    "dddd",
+                    "doong_hwi",
                     "151,515",
-                    "edqeqe",
+                    "Good Morning",
                     "151,523",
-                    R.drawable.yadoran
+                    R.drawable.ye
                 )
             )
         }
