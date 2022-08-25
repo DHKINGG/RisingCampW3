@@ -125,10 +125,12 @@
 
         <TextView
             android:id="@+id/tv_main_feed_like_count"
-            android:layout_width="220dp"
+            android:layout_width="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
             android:layout_height="34dp"
             android:layout_marginLeft="10dp"
-            android:gravity="center"
             android:text="millionhiphop님 외 18,141명이 좋아합니다"
             android:textColor="@color/black"
             android:textSize="12dp"
