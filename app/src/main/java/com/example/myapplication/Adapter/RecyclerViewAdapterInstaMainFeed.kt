@@ -7,15 +7,21 @@ import com.example.myapplication.Model.MainFeedItemModel
 import com.example.myapplication.databinding.InstaMainfeedBinding
 
 
-class RecyclerViewAdapterInstaMainFeed : RecyclerView.Adapter<RecyclerViewAdapterInstaMainFeed.Holder>() {
-    val list = mutableListOf<MainFeedItemModel>()
+class RecyclerViewAdapterInstaMainFeed :
+    RecyclerView.Adapter<RecyclerViewAdapterInstaMainFeed.Holder>() {
+    var list = mutableListOf<MainFeedItemModel>()
 
     inner class Holder(val binding: InstaMainfeedBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MainFeedItemModel, position: Int) {
-//            binding.mainId.text = item.nickName
-//            binding.mainFeed.setImageResource(item.itemImage)
-
+            binding.ivMainFeedProfile.setImageResource(item.profileImage)
+            binding.tvMainFeedNickname.text = item.nickName
+            binding.ivMainFeedSubProfile.setImageResource(item.profileImage)
+            binding.tvMainFeedLikeCount.text = "${item.nickName}님 외 ${item.likeCnt}명이 좋아합니다"
+            binding.tvMainFeedSubNickname.text = item.nickName
+            binding.tvMainFeedContent.text = item.contentText
+            binding.ivMainFeedUserPrfile.setImageResource(item.userProfileImage)
+            binding.tvMainFeedCommentCount.text = "댓글 ${item.commentCnt}개 모두 보기"
         }
     }
 

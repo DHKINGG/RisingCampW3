@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -10,7 +11,7 @@
         android:layout_height="50dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/iv_mainfeed"
+            android:id="@+id/iv_main_feed_profile"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -24,6 +25,7 @@
             app:riv_corner_radius="15dp" />
 
         <TextView
+            android:id="@+id/tv_main_feed_nickname"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginLeft="10dp"
@@ -31,14 +33,14 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/iv_mainfeed"
+            app:layout_constraintLeft_toRightOf="@+id/iv_main_feed_profile"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:layout_width="10dp"
             android:layout_height="23dp"
-            android:src="@drawable/mainfeed_side_menu"
             android:layout_marginRight="10dp"
+            android:src="@drawable/mainfeed_side_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +62,7 @@
         android:layout_height="50dp">
 
         <ImageView
-            android:id="@+id/iv_mainfeed_like"
+            android:id="@+id/iv_main_feed_like"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
@@ -76,7 +78,7 @@
             android:layout_marginLeft="18dp"
             android:src="@drawable/mainfeed_comment_icon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/iv_mainfeed_like"
+            app:layout_constraintLeft_toRightOf="@id/iv_main_feed_like"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -92,8 +94,8 @@
 
         <ImageView
             android:id="@+id/iv_mainfeed_save"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/mainfeed_save_icon"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -108,12 +110,100 @@
         android:layout_height="30dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/iv_mainfeed_sub_icon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:id="@+id/iv_main_feed_sub_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/sub_profile_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_border_color="#e1e1e1"
+            app:riv_border_width="1dp"
+            app:riv_corner_radius="15dp" />
+
+        <TextView
+            android:id="@+id/tv_main_feed_like_count"
+            android:layout_width="220dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="millionhiphop님 외 18,141명이 좋아합니다"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_main_feed_sub_profile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+
+        <TextView
+            android:id="@+id/tv_main_feed_sub_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="millionhiphop"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_main_feed_content"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="mood"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv_main_feed_sub_nickname"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+
+        <TextView
+            android:id="@+id/tv_main_feed_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="댓글 161개 모두 보기"
+            android:textColor="#737373"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/iv_main_feed_user_prfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mainfeed_bottom_subprofile_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -126,123 +216,35 @@
             android:layout_height="20dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="millionhiphop님 외 18,141명이 좋아합니다"
-            android:textColor="@color/black"
-            android:textSize="10dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/iv_mainfeed_sub_icon"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp">
-
-        <TextView
-            android:id="@+id/iv_mainfeed_title"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:gravity="center"
-            android:text="millionhiphop"
-            android:textColor="@color/black"
-            android:textSize="10dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginLeft="5dp"
-            android:gravity="center"
-            android:text="mood"
-            android:textColor="@color/black"
-            android:textSize="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/iv_mainfeed_title"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:gravity="center"
-            android:text="댓글 161개 모두 보기"
-            android:layout_marginLeft="10dp"
-            android:textSize="10dp"
+            android:text="댓글달기..."
             android:textColor="#737373"
+            android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/iv_main_feed_user_prfile"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/iv_mainfeed_sub_plus_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/mainfeed_bottom_sub_plus_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/mainfeed_bottom_sub_plus_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/iv_mainfeed_bottom_sub_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/mainfeed_bottom_subprofile_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:riv_border_color="#e1e1e1"
-                app:riv_border_width="1dp"
-                app:riv_corner_radius="15dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="댓글달기..."
-                android:textColor="#737373"
-                android:textSize="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/iv_mainfeed_bottom_sub_icon"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/iv_mainfeed_sub_plus_icon"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/mainfeed_bottom_sub_plus_icon"
-                android:layout_marginRight="10dp"/>
-
-            <ImageView
-
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/mainfeed_bottom_sub_plus_icon"
-                android:layout_marginRight="10dp"/>
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </LinearLayout>

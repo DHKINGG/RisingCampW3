@@ -1,21 +1,23 @@
 package com.example.myapplication.Adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Model.ItemParentModel
 import com.example.myapplication.Model.StoryItemModel
 import com.example.myapplication.databinding.InstaStroyBinding
 
 
 class RecyclerViewAdapterInstaStory : RecyclerView.Adapter<RecyclerViewAdapterInstaStory.Holder>() {
-    val list = mutableListOf<StoryItemModel>()
+    var list = mutableListOf<StoryItemModel>()
 
     inner class Holder(val binding: InstaStroyBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: StoryItemModel, position: Int) {
-//            binding.textView.text = item.nickName
-//            binding.imageStory.setImageResource(item.itemImage)
-
+            binding.ivStoryNickname.text = item.nickName
+            binding.ivStoryBorder.visibility = if (item.isRead) View.GONE else View.VISIBLE
+            binding.ivStoryProfile.setImageResource(item.storyImage)
         }
     }
 
