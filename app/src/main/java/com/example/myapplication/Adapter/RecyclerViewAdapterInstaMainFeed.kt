@@ -20,7 +20,7 @@ class RecyclerViewAdapterInstaMainFeed :
         fun bind(item: MainFeedItemModel, position: Int) {
             binding.ivMainFeedProfile.setImageResource(item.profileImage)
             binding.tvMainFeedNickname.text = item.nickName
-            binding.ivMainFeedSubProfile.setImageResource(item.profileImage)
+            binding.ivMainFeedSubProfile.setImageResource(item.likeProfileImage)
             binding.tvMainFeedLikeCount.text = "${item.likeNickName}님 외 ${item.likeCnt}명이 좋아합니다"
             binding.tvMainFeedSubNickname.text = item.nickName
             binding.tvMainFeedContent.text = item.contentText

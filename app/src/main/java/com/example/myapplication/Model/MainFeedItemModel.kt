@@ -2,6 +2,7 @@ package com.example.myapplication.Model
 
 class MainFeedItemModel(
     val profileImage: Int,
+    val likeProfileImage : Int,
     val nickName: String,
     var isLike: Boolean,
     val likeNickName: String,
