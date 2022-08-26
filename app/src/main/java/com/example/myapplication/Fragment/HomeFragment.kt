@@ -60,7 +60,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
                     R.drawable.insta_story_image10,
                     R.drawable.insta_story_image3,
                     R.drawable.hoe_bbang,
-                    R.drawable.heart_icon
+                    R.drawable.insta_story_image5
                 )
             )
         )
