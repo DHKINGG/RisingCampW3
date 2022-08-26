@@ -31,7 +31,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
     }
 
     fun setStoryData() {
-        storyData.add(StoryItemModel(R.drawable.yadoran, "2blux", true))
+        storyData.add(StoryItemModel(R.drawable.yadoran, "2blux", false))
         storyData.add(StoryItemModel(R.drawable.insta_story_image1, "doong_hwi", true))
         storyData.add(StoryItemModel(R.drawable.insta_story_image2, "j_youngg", true))
         storyData.add(StoryItemModel(R.drawable.insta_story_image3, "rock_sinwoo", true))
