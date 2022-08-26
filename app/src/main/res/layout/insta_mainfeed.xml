@@ -37,6 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/iv_main_feed_more"
             android:layout_width="10dp"
             android:layout_height="23dp"
             android:layout_marginRight="10dp"
@@ -62,7 +63,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/mainfeed_like_icon"
+            android:src="@drawable/main_feed_unlike_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

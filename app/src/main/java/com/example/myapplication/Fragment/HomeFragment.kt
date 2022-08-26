@@ -56,7 +56,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
             feedData.add(
                 MainFeedItemModel(
                     R.drawable.hoe_bbang,
-                    "2blux",
+                    "$i",
                     false,
                     "doong_hwi",
                     "151,515",
