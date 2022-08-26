@@ -21,6 +21,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
 
         binding.rvMain.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        // requireContext : fragment엔 context가 없어서 context를 요청해서 가져와야함
 
         val adapter = MultiAdapter()
         adapter.storyDataList = storyData
@@ -47,6 +48,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
     }
 
     fun setFeedData() {
+        val imageList = mutableListOf<Int>()
+        for (i in 0..4) {
+            imageList.add(R.drawable.yadoran)
+        }
         for (i in 0..10) {
             feedData.add(
                 MainFeedItemModel(
@@ -57,7 +62,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
                     "151,515",
                     "Good Morning",
                     "151,523",
-                    R.drawable.ye
+                    R.drawable.ye,
+                    imageList
                 )
             )
         }

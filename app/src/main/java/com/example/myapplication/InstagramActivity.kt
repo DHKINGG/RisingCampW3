@@ -17,6 +17,7 @@ class InstagramActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        // transaction : 작업의 단위
         supportFragmentManager.beginTransaction().add(binding.flInsta.id, HomeFragment()).commit()
         binding.btnNav.setOnNavigationItemSelectedListener {
             replaceFragment(

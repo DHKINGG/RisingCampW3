@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dot_size">3dp</dimen>
+    <dimen name="select_dot_size">3.5dp</dimen>
+    <dimen name="dot_padding">6dp</dimen>
+</resources>

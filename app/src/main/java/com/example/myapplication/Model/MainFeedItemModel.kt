@@ -8,5 +8,6 @@ class MainFeedItemModel(
     val likeCnt: String,
     val contentText: String,
     val commentCnt: String,
-    val userProfileImage: Int
+    val userProfileImage: Int,
+    val imageList: MutableList<Int>
 )

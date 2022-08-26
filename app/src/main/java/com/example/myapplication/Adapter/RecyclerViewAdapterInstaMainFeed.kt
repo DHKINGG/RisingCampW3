@@ -3,8 +3,11 @@ package com.example.myapplication.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.Model.MainFeedItemModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.InstaMainfeedBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class RecyclerViewAdapterInstaMainFeed :
@@ -22,6 +25,13 @@ class RecyclerViewAdapterInstaMainFeed :
             binding.tvMainFeedContent.text = item.contentText
             binding.ivMainFeedUserPrfile.setImageResource(item.userProfileImage)
             binding.tvMainFeedCommentCount.text = "댓글 ${item.commentCnt}개 모두 보기"
+
+            var viewPagerAdapter = ViewPagerAdapter()
+            viewPagerAdapter.list = item.imageList
+            binding.vpMainFeed.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            binding.vpMainFeed.adapter= viewPagerAdapter
+
+            TabLayoutMediator(binding.tlIndicator, binding.vpMainFeed) { tab, position -> }.attach()
         }
     }
 

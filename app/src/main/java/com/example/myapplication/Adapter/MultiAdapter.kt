@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Model.*
 import com.example.myapplication.databinding.*
 
-class MultiAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MultiAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var storyDataList = mutableListOf<StoryItemModel>()
     var feedDataList = mutableListOf<MainFeedItemModel>()
     lateinit var adapterContext: Context

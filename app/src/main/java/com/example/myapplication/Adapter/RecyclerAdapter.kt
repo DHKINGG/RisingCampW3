@@ -23,6 +23,9 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>() {
         }
     }
 
+    // 밑에 세함수는 Adapter 클래스가 생성이되면 저절로 호출
+
+    // 뷰홀더를 생성하는 함수
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): Holder {
         return Holder(
             RecyclerItemViewBinding.inflate(
@@ -33,10 +36,12 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>() {
         )
     }
 
+    // 생성된 뷰홀더에 데이터를 바인딩해주는 함수
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(list[position], position)
     }
 
+    // recyclerView의 아이템 개수
     override fun getItemCount(): Int {
         return list.size
     }

@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         setData()
 
-        binding.rvMain.layoutManager = LinearLayoutManager(this)
+        binding.rvMain.layoutManager = LinearLayoutManager(this) // this : 현재 액티비티의 context를 가져옴
 
         val adapter = RecyclerAdapter()
         adapter.getListFromView(data)
