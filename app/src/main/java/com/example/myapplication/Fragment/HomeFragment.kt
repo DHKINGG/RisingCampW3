@@ -49,7 +49,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
                 R.drawable.hoe_bbang,
                 R.drawable.insta_story_image4,
                 "2blux",
-                true,
+                false,
                 "rockJunsung",
                 "333,33",
                 "Good Morning",

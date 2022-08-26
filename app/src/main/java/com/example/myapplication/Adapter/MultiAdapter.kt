@@ -17,9 +17,7 @@ class MultiAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class StoryHolder(val binding: InstaStoryMultiViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MutableList<StoryItemModel>) { //해당 바인드를 통해 필요한 메모리들을 결합해 보여줌 <list view와 의차이점> 최소한의 리스트들만 보여지게
-            // itemView에 어떻게 바인딩 할건지 여기서 정의
-            binding.rvStory.layoutManager =
-                LinearLayoutManager(adapterContext, LinearLayoutManager.HORIZONTAL, false)
+            binding.rvStory.layoutManager = LinearLayoutManager(adapterContext, LinearLayoutManager.HORIZONTAL, false)
             val recyclerAdapter = RecyclerViewAdapterInstaStory()
             recyclerAdapter.list = item
             binding.rvStory.adapter = recyclerAdapter
@@ -29,9 +27,7 @@ class MultiAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class FeedHolder(val binding: InstaFeedMultiviewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MutableList<MainFeedItemModel>) { //해당 바인드를 통해 필요한 메모리들을 결합해 보여줌 <list view와 의차이점> 최소한의 리스트들만 보여지게
-            // itemView에 어떻게 바인딩 할건지 여기서 정의
-            binding.rvFeed.layoutManager =
-                LinearLayoutManager(adapterContext, LinearLayoutManager.VERTICAL, false)
+            binding.rvFeed.layoutManager = LinearLayoutManager(adapterContext, LinearLayoutManager.VERTICAL, false)
             val recyclerAdapter = RecyclerViewAdapterInstaMainFeed()
             recyclerAdapter.list = item
             binding.rvFeed.adapter = recyclerAdapter
@@ -64,10 +60,9 @@ class MultiAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if(position == 0){
+        if (position == 0) {
             (holder as StoryHolder).bind(storyDataList)
-        }
-        else{
+        } else {
             (holder as FeedHolder).bind(feedDataList)
         }
         holder.setIsRecyclable(false)

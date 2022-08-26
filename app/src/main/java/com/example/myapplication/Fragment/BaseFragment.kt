@@ -36,7 +36,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         _binding = null
     }
 
-    open fun initView(){ // 자식뷰에서 실행 하던지 말던지는 내가 판단하에
+    open fun initView(){
         Log.d("data", "실행되었습니다")
     }
 
